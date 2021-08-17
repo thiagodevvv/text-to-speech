@@ -21,8 +21,8 @@ export default function Home() {
     })
     .then(response => response.json())
     .then(data => {
-      setComments(data)
       setComment("")
+      getComments()
     })
   }
 
@@ -55,15 +55,13 @@ export default function Home() {
       })
       .then(response => response.json())
       .then(data => {
+      setIsPlaying(true)
       playAudio(id_voice)
-    })
+      })
     }else {
       playAudio(id_voice)
     }
   }
-  useEffect(() => {
-    getComments()
-  },[updateComments])
   useEffect(() => {
     getComments()
   },[])

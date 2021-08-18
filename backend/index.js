@@ -12,6 +12,7 @@ const ULID = require('ulid')
 app.use(cors())
 app.use(express.json())
 
+const HOST = '0.0.0.0'
 
 app.post('/addcomment', async (req,res) => {
     const comment = req.body.comment
@@ -68,4 +69,4 @@ app.post('/voice', async (req,res) => {
     }) 
 })
 
-app.listen(3333)
+app.listen(3333,HOST)

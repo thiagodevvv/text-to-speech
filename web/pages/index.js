@@ -23,6 +23,7 @@ export default function Home() {
     .then(data => {
       setComment("")
       getComments()
+      alert('Comentário enviado com sucesso')
     })
   }
 
@@ -75,7 +76,7 @@ export default function Home() {
       
       <Container className="container-add-comment">
             <Form.Label style={{fontFamily: 'Segoe UI', fontWeight: 'bold', 
-                color: '#696969', fontSize:15,}}>Comentário</Form.Label>
+                color: '#696969', fontSize:15}}>Comentário</Form.Label>
             <Form.Control value={comment} className="input-comment" as="textarea" onChange={(event) => setComment((event.target.value))} />
             <Button type="submit" style={{marginTop: 10, width: "100%"}} variant="success" onClick={() => sendComment()}>Cadastrar</Button>
         </Container>
